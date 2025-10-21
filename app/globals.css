@@ -1,0 +1,277 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Enhanced SMK TI BAZMA theme with better visual hierarchy */
+:root {
+  /* Professional white and blue theme with excellent contrast */
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  /* Enhanced blue primary with better accessibility */
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  /* Refined secondary colors */
+  --secondary: #f1f5f9;
+  --secondary-foreground: #334155;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  /* Vibrant accent colors */
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #2563eb;
+  --success: #059669;
+  --success-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #dc2626;
+  --chart-4: #059669;
+  --chart-5: #d97706;
+  --radius: 0.5rem;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #1e293b;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e2e8f0;
+  --sidebar-accent-foreground: #475569;
+  --sidebar-border: #cbd5e1;
+  --sidebar-ring: #2563eb;
+
+  /* Enhanced ekstrakurikuler brand colors */
+  --robotics-color: #f59e0b;
+  --silat-color: #dc2626;
+  --futsal-color: #059669;
+  --music-color: #7c3aed;
+  --hadroh-color: #10b981;
+  --qori-color: #6366f1;
+  
+  /* Animation variables */
+  --animation-duration: 0.3s;
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space-grotesk);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Updated patterns and animations for clean white theme */
+  .gsap-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Cpath d='M30 30l15-15v30l-15-15zm-15 0L0 15v30l15-15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .gsap-hover {
+    transition: all 0.3s ease;
+  }
+  .gsap-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+  }
+
+  .gsap-glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .gsap-fade {
+    animation: gsapFadeIn 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes gsapFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .gsap-hero-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    position: relative;
+  }
+
+  .gsap-hero-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.1) 100%);
+    pointer-events: none;
+  }
+
+  .gsap-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+    animation: gsapFloat 6s ease-in-out infinite;
+  }
+
+  @keyframes gsapFloat {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(180deg);
+    }
+  }
+
+  .gsap-text-reveal {
+    overflow: hidden;
+  }
+
+  .gsap-text-reveal span {
+    display: inline-block;
+    animation: gsapTextSlide 0.6s ease forwards;
+    transform: translateY(100%);
+  }
+
+  @keyframes gsapTextSlide {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .gsap-card-shadow {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  .gsap-card-shadow:hover {
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  }
+
+  .gsap-scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  .gsap-scroll-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Added better hover effects and card styling */
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
+  }
+
+  .admin-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    transition: all var(--animation-duration) var(--animation-timing);
+    border-radius: calc(var(--radius) + 2px);
+  }
+  .admin-card:hover {
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.12), 0 4px 6px rgba(0, 0, 0, 0.05);
+    transform: translateY(-3px);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  /* Enhanced form styling */
+  .form-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: calc(var(--radius) + 4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Better button hover effects */
+  .btn-primary {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transition: all var(--animation-duration) var(--animation-timing);
+  }
+  .btn-primary:hover {
+    background: hsl(var(--primary) / 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+  }
+  
+  /* Enhanced status indicators */
+  .status-active {
+    background: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success) / 0.2);
+  }
+  .status-inactive {
+    background: hsl(var(--destructive) / 0.1);
+    color: hsl(var(--destructive));
+    border: 1px solid hsl(var(--destructive) / 0.2);
+  }
+  
+  /* Loading states */
+  .loading-shimmer {
+    background: linear-gradient(90deg, 
+      hsl(var(--muted)) 0%, 
+      hsl(var(--muted) / 0.8) 50%, 
+      hsl(var(--muted)) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
