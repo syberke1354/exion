@@ -54,10 +54,22 @@ const adminAccounts = [
     role: "hadroh_admin"
   },
   {
-    email: "qori@smktibazma.sch.id", 
+    email: "qori@smktibazma.sch.id",
     password: "qori123",
     name: "Admin Qori",
     role: "qori_admin"
+  },
+  {
+    email: "paskib@smktibazma.sch.id",
+    password: "paskib123",
+    name: "Admin Paskibra",
+    role: "paskib_admin"
+  },
+  {
+    email: "softwaredev@smktibazma.sch.id",
+    password: "softwaredev123",
+    name: "Admin Software Development",
+    role: "software_dev_admin"
   }
 ];
 

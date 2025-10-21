@@ -121,6 +121,19 @@ export default function ExtracurricularsPage({ onNavigate }: ExtracurricularsPag
       color: "from-red-500 to-rose-500",
       icon: "🎖️",
     },
+    {
+      id: "software_dev",
+      name: "Software Development",
+      category: "Teknologi",
+      description: "Belajar membuat aplikasi web dan mobile dengan teknologi terkini. Dari pemula hingga mahir dalam coding.",
+      image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
+      members: 20,
+      schedule: "Rabu & Jumat, 15:30-17:30",
+      location: "Lab Komputer",
+      achievements: ["Juara 2 Hackathon Nasional", "Best App Design Award"],
+      color: "from-blue-500 to-cyan-500",
+      icon: "💻",
+    },
   ]
 
   const categories = ["Semua", "Teknologi", "Olahraga", "Seni", "Bela Diri", "Seni Islami", "Tilawah", "Kepanduan"]

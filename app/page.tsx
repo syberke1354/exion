@@ -17,6 +17,7 @@ import Navbar from "@/components/navbar"
 import PramukaPage from "@/components/pramuka-page"
 import PaskibPage from "@/components/paskib-page"
 import QoriPage from "@/components/qori-page"
+import SoftwareDevelopmentPage from "@/components/software-development-page"
 import RobotikPage from "@/components/robotik-page"
 import SilatPage from "@/components/silat-page"
 import { useAuth } from "@/hooks/use-auth"
@@ -147,6 +148,8 @@ case "robotik":
         return <PramukaPage onNavigate={setActiveSection}/>
       case "paskib":
         return <PaskibPage onNavigate={setActiveSection}/>
+      case "software_dev":
+        return <SoftwareDevelopmentPage />
       case "documentation":
         return <DocumentationGalleryPage />
       default:
